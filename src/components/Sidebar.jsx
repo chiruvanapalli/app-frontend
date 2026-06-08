@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser, selectRoles } from '../store/slices/authSlice';
 import usePermission from '../hooks/usePermission';
+import { useState } from 'react';
 
 const NavItem = ({ to, icon, label }) => (
   <NavLink
@@ -29,6 +30,7 @@ const Sidebar = () => {
   const user = useSelector(selectUser);
   const roles = useSelector(selectRoles);
   const { hasPermission } = usePermission();
+  const [isActive, setIsActive] = useState(false);
 
   const handleLogout = async () => {
     await dispatch(logout());
