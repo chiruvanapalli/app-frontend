@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser, selectRoles } from '../store/slices/authSlice';
 import usePermission from '../hooks/usePermission';
-import { useState } from 'react';
 
 const NavItem = ({ to, icon, label }) => (
   <NavLink
