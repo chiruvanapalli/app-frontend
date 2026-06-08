@@ -30,7 +30,6 @@ const Sidebar = () => {
   const user = useSelector(selectUser);
   const roles = useSelector(selectRoles);
   const { hasPermission } = usePermission();
-  const [isActive, setIsActive] = useState(false);
 
   const handleLogout = async () => {
     await dispatch(logout());
